@@ -1,49 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title style="color: fuchsia;">选项卡</title>
-	<style>
-		.tab {
-			overflow: hidden;
-			border: 1px solid #ccc;
-			background-color: #bf3eff;
-			padding: 7px;
-		}
-		.tab button {
-			background-color: inherit;
-			float: left;
-			border: none;
-			outline: none;
-			cursor: pointer;
-			padding: 7px 11px;
-			transition: 0.1s;
-		}
-		.tab button:hover {
-			background-color: #ddd;
-		}
-		.tab button.active {
-			background-color: #ccc;
-		}
-		.tabcontent {
-			display: none;
-			padding: 3px 7px;
-			border: 1px solid #ccc;
-			border-top: none;
-		}
-	</style>
-	
-	<link href="android_assets/styles.css" rel="stylesheet">
-	
-</head>
 <body>
-	<h2 style="color: Blue;">WebView</h2>
-	<p style="color: Red;">『列表』</p>
-	<div class="tab">
-		<button class="tablinks" style="color: fuchsia;" onclick="openTab(event, 'tab1')" id="defaultOpen">魔力链接</button>
-		<button class="tablinks" style="color: fuchsia;" onclick="openTab(event, 'tab2')">网页浏览</button>
-		<button class="tablinks" style="color: fuchsia;" onclick="openTab(event, 'tab3')">预开发</button>
-	</div>
-	<div id="tab1" class="tabcontent">
 		<h3 style="color: hotpink;">魔力链接</h3>
 		<p style="color: hotpink;">『列表』</p>
 		<ul>
@@ -78,9 +35,13 @@
   <li>  <a href="https://oss-cn-hangzhou.aliyuncs.com/qbxueyuan/20230325/1fee4bafb92743bdaa1a7ca84a86154d.svg?_ks=6323&uy=37692&so=ywc&D=sina,ishare&key=55a5f23fd78e3f03817bfedd1219e92208304b5d875ee4e336150ca69001730e439c4bd7a557a9658187222c0474b71af7144a68bce7ac7ef6a1163af683a1bb5e7f4a2a52cedcad011044928ef79861c4f98808462190c91130fa5cd13f65fa059c5b168f990a5bafd363f758f8d8ab7c0368e1b6c499c772df62699bd954362ec13ae2a1f5d1e749dafc228f859b8ef869ed52685daf5997e12205c5348045517e9181d1c9cae884adc45143f5f45f46bef225df3bcdb96ff344bfd181197cf6e34441442fb214b46903a3172820169dba87bf61947ee2ecbb72e9fa322eb5&7v20230419">29.视频</a></li>
   <li>  <a href="https://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168213118931369&_wv=67&vid=17&&alert(1)&csn=voyv838">30.图片</a></li>
   <li>  <a href="https://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168213342514498&_wv=67&vid=17&&alert(1)&csn=voyv838">31.图片</a></li>
+  <li>  <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168249025128992&_wv=67&vid=17&&alert(1)&csn=voyv838">32.图片</a></li>
+  <li>   <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168249014636950&_wv=67&vid=17&&alert(1)&csn=voyv838">33.图片</a></li>
+  <li>   <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168257470338998&_wv=67&vid=17&&alert(1)&csn=voyv838">34.图片</a></li>
+  <li>    <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168257470338998&_wv=67&vid=17&&alert(1)&csn=voyv838">35.图片</a></li>
+  <li>    <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168257524136300&_wv=67&vid=17&&alert(1)&csn=voyv838">36.图片</a></li>
+  <li>    <a href="http://service-ablusunc-1302866996.hk.apigw.tencentcs.com/qq.php?t=168259388689856&_wv=67&vid=17&&alert(1)&csn=voyv838">37.图片</a></li>
 </ul>
-	</div>
-	<div id="tab2" class="tabcontent">
 		<h3 style="color: hotpink;">网页浏览</h3>
 		<p style="color: hotpink;">『列表』</p>
 		<ul>
@@ -106,28 +67,6 @@
   <li>  <a href="https://huifu.qq.com/index.html">QQ恢复官网</a></li>
   <li>  <a href="https://ui.ptlogin2.qq.com/cgi-bin/login?style=9&appid=522005705&s_url=https%3A%2F%2Fwap.mail.qq.com%2Flogin%2Flogin%3Fauth_type%3D3&daid=4&hln_css=https%3A%2F%2Fmail.qq.com%2Fzh_CN%2Fhtmledition%2Fimages%2Flogo%2Fqqmail%2Fqqmail_logo_default_200h.png&low_login=1&hln_autologin=%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95&hln_p_tips=%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">QQ邮箱网页版</a></li>
   <li>  <a href="https://ui.ptlogin2.qq.com/cgi-bin/login?pt_hide_ad=1&style=9&appid=549000929&pt_no_auth=1&pt_wxtest=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex">QQ空间网页版</a></li>
-  <li>  <h1>QQ群：https://jq.qq.com/?_wv=1027&k=rTaRKk2r</h1><li>
     </ul>
-	</div>
-	<div id="tab3" class="tabcontent">
-		<h3 style="color: hotpink;">预开发</h3>
-		<p style="color: hotpink;">我们考虑到了WebView的加载速度过慢的问题</p>
-	</div>
-	<script>
-		document.getElementById("defaultOpen").click();
-		function openTab(evt, tabName) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("tablinks");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
-			document.getElementById(tabName).style.display = "block";
-			evt.currentTarget.className += " active";
-		}
-	</script>
 </body>
 </html>
