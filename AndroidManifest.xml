@@ -14,36 +14,32 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 对正在运行的应用重新排序 -->
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-    <!-- 显示通知 -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <!-- 读取手机状态和身份 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 查询所有软件包 -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    <!-- 控制近距离通信 -->
-    <uses-permission android:name="android.permission.NFC" />
-    <!-- 发送持久广播 -->
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <!-- 停用屏幕锁定 -->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <!-- 拥有完全的网络访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--安卓13之后读取图片权限-->
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<!--安卓13之后读取视频权限-->
+<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+<!--安卓13之后读取音频权限-->
+<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <!-- 所有文件访问权限 -->
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_USERS" />
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
-    <!-- 读取您共享存储空间中的内容 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <!-- 修改或删除您共享存储空间中的内容 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 此应用可显示在其他应用上方 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.UPDATE_DOMAIN_VERIFICATION_USER_SELECTION" />
-    <uses-permission android:name="android.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION" />
-    <!-- 请求安装文件包 -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.REVOKE_RUNTIME_PERMISSIONS" />
+    <uses-permission android:name="android.permission.WRITE_SOCIAL_STREAM" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.WRITE_PROFILE" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+   <supports-screens        
+    android:anyDensity="true"       
+    android:largeScreens="true"      
+    android:normalScreens="true"    
+    android:resizeable="true"        
+    android:smallScreens="true" />
     <application
         android:debuggable="true"
         android:allowBackup="true"
@@ -55,6 +51,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Application">
+        <meta-data
+            android:name=" Android WebView "
+            android:value=" Yes " />
+        <meta-data
+            android:name=" Qauiliuy "
+            android:value=" No " />
+        <meta-data
+            android:name=" Jetpack "
+            android:value=" Yes " />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -63,7 +68,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+            <meta-data
+                  android:name=" Web "
+                  android:value=" WebView " />
+    </activity>
+        <activity  android:name=".APPActivity" />
+        <activity  android:name=".DataActivity" />
+        <activity  android:name=".WebViewActivity" />
+        <activity  android:name=".ShizukuActivity" />
     </application>
 
 </manifest>

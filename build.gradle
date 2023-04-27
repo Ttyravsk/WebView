@@ -10,8 +10,8 @@ android {
         applicationId "jar.github.activity"
         minSdk 24
         targetSdk 33
-        versionCode 50
-        versionName "10.0.0正式版"
+        versionCode 53
+        versionName "10.4.1正式版"
     }
 
     buildTypes {
@@ -38,4 +38,5 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-core'
     implementation 'androidx.arch.core:core-common'
     implementation 'androidx.collection:collection'
+    implementation 'com.google.android.material:material'
 }
