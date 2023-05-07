@@ -1,3 +1,5 @@
+package kt.kotlin.activity
+
 import java.security.MessageDigest
 
 fun sha1(input: String): String {

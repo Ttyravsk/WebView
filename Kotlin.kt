@@ -12,6 +12,8 @@ import android.view.MenuItem
 import android.util.AttributeSet
 import android.annotation.SuppressLint
 import android.webkit.WebViewClient
+import android.content.Intent
+import android.content.BroadcastReceiver
 import kt.kotlin.activity.databinding.ActivityMainBinding
 import com.itsaky.androidide.logsender.LogSender
 
@@ -37,8 +39,16 @@ public class Kotlin : AppCompatActivity() {
       supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-      // 获取WebView = 获取id
-       webView = findViewById(R.id.webView)
+        val isModified = SystemPropertyUtils.   isSystemPropertyModified("ro.debuggable")
+if (isModified) {
+    // 系统属性已被修改
+} else {
+    // 系统属性未被修改
+}
+
+
+       // 获取 WebView 实例
+         webView = findViewById(R.id.webView)
 
       // 必要参数或者属性
         webView.webViewClient = WebViewClient()
@@ -47,6 +57,22 @@ public class Kotlin : AppCompatActivity() {
 
       // 设置缩放至屏幕的大小
         webView.settings.loadWithOverviewMode = true
+
+     // 开启数据库存储API权限
+       webView.settings.setDomStorageEnabled(true)
+       webView.settings.setDatabaseEnabled(true)
+
+     // 设置WebView保存数据
+       webView.settings.setSaveFormData(true)
+
+     // 设置允许访问其他文件方案的内容
+    webView.settings.setAllowFileAccessFromFileURLs(true)
+
+     // 设置WebView支持多窗口模式
+       webView.settings.setSupportMultipleWindows(true)
+
+     // 设置允许自动打开弹窗
+           webView.settings.setJavaScriptCanOpenWindowsAutomatically(true)
 
       // 设置自适应屏幕，两者合用
         webView.settings.setPluginState(WebSettings.PluginState.OFF)
@@ -75,8 +101,18 @@ public class Kotlin : AppCompatActivity() {
        // 设置可以访问文件
         webView.settings.setAllowFileAccess(true)
 
+        
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // 检测到Su进程时，闪退应用
+            WebView.setWebContentsDebuggingEnabled(true)
+        
+       }
+
         // 加载URL
         webView.loadUrl("file:///android_asset/r.html")
+        
+
 
         // 启用JavaScript
         webView.settings.javaScriptEnabled = true
@@ -87,6 +123,7 @@ public class Kotlin : AppCompatActivity() {
        // 设置缓存模式为LOAD_CACHE_ELSE_NETWORK
         webView.settings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
 
+
       // 设置WebView不跳转浏览器
      webView.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
@@ -94,8 +131,8 @@ public class Kotlin : AppCompatActivity() {
                 return true
             }
         })
-}
 
+}
     override fun onBackPressed() {
         // 检查是否有可回退的页面
         if (webView.canGoBack()) {
@@ -113,5 +150,11 @@ public class Kotlin : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+ 
 
+     private fun isDeviceRooted(): Boolean {
+       return Build.TAGS?.contains("test-keys") == true
+                || Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
+                && android.os.Process.myUid() > 10000
+    }
 }

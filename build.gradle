@@ -11,8 +11,8 @@ android {
         applicationId "kt.kotlin.activity"
         minSdk 24
         targetSdk 33
-        versionCode 31
-        versionName "3.0.28-beta"
+        versionCode 100
+        versionName "9.0.1-beta_Play"
     }
 
     buildTypes {
@@ -50,8 +50,3 @@ dependencies {
     implementation 'androidx.documentfile:documentfile'
 }
     
-    ext {
-    publishLibrary = true
-    POM_NAME = "Shizuku API - provider"
-    POM_DESCRIPTION = "Content Provider for Shizuku."
-}

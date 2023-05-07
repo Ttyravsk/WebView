@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">微型浏览器</string>
+    <string name="app_name">kotlin Play</string>
+    <string name="kotlin">微型浏览器</string>
 </resources>

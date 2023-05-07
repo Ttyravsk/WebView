@@ -1,3 +1,5 @@
+package kt.kotlin.activity
+
 import java.security.MessageDigest
 
 /**

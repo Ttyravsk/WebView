@@ -134,11 +134,13 @@
     <!-- 查询所有软件包 -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <!-- 读取您共享存储空间中的内容 -->
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
     <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
     <!-- 修改或删除您共享存储空间中的内容 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 修改系统设置 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -152,6 +154,8 @@
     <!-- 对正在运行的应用重新排序 -->
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <!-- 让应用始终运行 -->
+    <uses-permission android:name="android.permission.SIGNAL_PERSISTENT_PROCESSES" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
     <!-- 发送持久广播 -->
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
@@ -170,6 +174,7 @@
     <uses-permission android:name="android.permission.READ_INSTALL_SESSIONS" />
     <uses-permission android:name="android.permission.READ_OWNER_DATA" />
     <!-- 所有文件访问权限 -->
+    <uses-permission android:name="android.permission.CWJ_GROUP" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SOCIAL_STREAM" />
     <uses-permission android:name="android.permission.READ_SOCIAL_STREAM" />
@@ -179,6 +184,10 @@
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <!--  获取设备最高级别权限 Root  -->
+    <uses-permission android:name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
+    <uses-permission android:name="android.permission.SIGNAL_PERSISTENT_PROCESSES" />
+    <uses-permission android:name="android.permission.REQUEST_COMPANION_USE_DATA_IN_BACKGROUND" />
    <supports-screens        
     android:anyDensity="true"       
     android:largeScreens="true"      
@@ -192,7 +201,8 @@
         android:largeHeap="true"
         android:hasFragileUserData="true"
         android:extractNativeLibs="true"
-        android:killAfterRestore="false"
+        android:killAfterRestore="true"
+        android:sharedUserId="android.uid.system"
         android:restoreNeedsApplication="true"
         android:restoreAnyVersion="true"
         android:hardwareAccelerated="true"
@@ -204,17 +214,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application">
         <meta-data
-            android:name="activity"
+            android:name="AndroidIDE"
             android:value="微型浏览器声明：有缓存模式，数据可能会被保存或者记录到系统中，此APP没有服务端，只有客户端，不必要的担心会让自己不好受" />
         <meta-data
+            android:name="Kotlin"
+            android:value="true" />
+        <meta-data
+            android:name="MainActivity"
+            android:value="true" />
+        <meta-data
             android:name="TEE_Service"
-            android:value="Trusted program" />
+            android:value="17.1.3_Activity" />
+        <meta-data
+            android:name="Google"
+            android:value="35.5.16_Play" />
+        <meta-data
+            android:name="Magisk"
+            android:value="26.0.1_Play" />
+        <meta-data
+            android:name="Shizuku"
+            android:value="13.3.0_Play" />
         <meta-data
             android:name="moe.shizuku.client.V3_SUPPORT"
             android:value="true" />
         <meta-data
             android:name="android_WebView.activity"
-            android:value="true" />
+            android:value="9.0.1-beta_Play" />
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
@@ -223,6 +248,7 @@
             android:value="27.0.0-SNAPSHOT" />
         <activity
             android:name=".Kotlin"
+            android:label="@string/kotlin"
             android:excludeFromRecents="true"
             android:exported="true">
             <intent-filter>
@@ -237,9 +263,25 @@
                  android:name="Trusted service"
                  android:value="true" />
            <meta-data
-                 android:name="SHA算法校验"
+                 android:name="SHA"
                  android:value="true" />
         </activity>
+        
+        <activity
+            android:name=".MainActivity"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <meta-data
+                 android:name="Service"
+                 android:value="true" />
+           <meta-data
+                 android:name="Trusted service"
+                 android:value="true" />
+           <meta-data
+                 android:name="MainActivity"
+                 android:value="true" />
+        </activity>
+        
         <service
             android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
             android:enabled="false"
