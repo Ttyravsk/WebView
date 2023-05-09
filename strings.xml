@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">kotlin Play</string>
-    <string name="kotlin">微型浏览器</string>
+    <string name="app_name">activity Javakt Play</string>
+    <string name="kotlin">Web浏览器</string>
+    <string name="listView">WLAN查看</string>
+    <string name="EditText">HTML运行</string>
+    <string name="action_back">Act</string>
+    <string name="action_forward">Bty</string>
+    <string name="action_refresh">Kij</string>
 </resources>

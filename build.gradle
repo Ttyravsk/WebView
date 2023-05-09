@@ -11,8 +11,8 @@ android {
         applicationId "kt.kotlin.activity"
         minSdk 24
         targetSdk 33
-        versionCode 100
-        versionName "9.0.1-beta_Play"
+        versionCode 128
+        versionName "11.3.31-beta_Play"
     }
 
     buildTypes {

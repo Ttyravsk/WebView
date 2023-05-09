@@ -8,6 +8,14 @@ import android.content.Context
 import android.widget.Toast
 import android.webkit.WebView
 import android.webkit.WebSettings
+import android.graphics.Typeface
+import com.google.android.material.tabs.TabLayout
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.widget.LinearLayout
+import java.util.ArrayList
+import java.util.List
+import android.view.Menu
 import android.view.MenuItem
 import android.util.AttributeSet
 import android.annotation.SuppressLint
@@ -92,6 +100,9 @@ if (isModified) {
       // 设置支持缩放
         webView.settings.setSupportZoom(true)
 
+       // 设置缩放等级
+        webView.setInitialScale(200)
+
       // 开启 Application Caches 功能
         webView.settings.setAppCacheEnabled(true)
 
@@ -109,10 +120,14 @@ if (isModified) {
         
        }
 
+        // 允许WebView自动识别需要跳转的应用
+webView.settings.allowUniversalAccessFromFileURLs = true
+webView.settings.allowFileAccessFromFileURLs = true
+
+
         // 加载URL
         webView.loadUrl("file:///android_asset/r.html")
         
-
 
         // 启用JavaScript
         webView.settings.javaScriptEnabled = true
@@ -142,7 +157,7 @@ if (isModified) {
         }
     }
 
-       // 设置WebView返回上一页
+     // 设置WebView返回上一页
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             onBackPressed()
@@ -150,11 +165,12 @@ if (isModified) {
         }
         return super.onOptionsItemSelected(item)
     }
- 
+
 
      private fun isDeviceRooted(): Boolean {
        return Build.TAGS?.contains("test-keys") == true
                 || Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
                 && android.os.Process.myUid() > 10000
     }
+
 }

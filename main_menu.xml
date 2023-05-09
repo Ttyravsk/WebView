@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_back"
+        android:icon="@mipmap/ic_arrow_back"
+        android:title="@string/action_back"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/action_forward"
+        android:icon="@mipmap/ic_arrow_forward"
+        android:title="@string/action_forward"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@mipmap/ic_refresh"
+        android:title="@string/action_refresh"
+        android:showAsAction="always" />
+</menu>

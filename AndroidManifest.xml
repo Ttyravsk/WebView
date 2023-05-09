@@ -217,10 +217,16 @@
             android:name="AndroidIDE"
             android:value="微型浏览器声明：有缓存模式，数据可能会被保存或者记录到系统中，此APP没有服务端，只有客户端，不必要的担心会让自己不好受" />
         <meta-data
+            android:name="开发者遗言"
+            android:value="君非友，莫扰民，非子非女莫知，莫成熟，莫沉稳，如儿时，莫乖莫巧，吾乃非君子，善结缘，无事不登三宝殿，莫望吾，若望吾，以礼相待，善结桃花缘，结缘时三分防三分守便可，若惹吾乃寻死，吾莫怕，吾莫会惹是生非，吾仍未成熟，未稳重，如不慎冒犯，还请谅解！吾莫寻意，身患重病，冒犯到您时，还请谅解！" />
+        <meta-data
             android:name="Kotlin"
             android:value="true" />
         <meta-data
             android:name="MainActivity"
+            android:value="true" />
+        <meta-data
+            android:name="ListView"
             android:value="true" />
         <meta-data
             android:name="TEE_Service"
@@ -239,7 +245,7 @@
             android:value="true" />
         <meta-data
             android:name="android_WebView.activity"
-            android:value="9.0.1-beta_Play" />
+            android:value="11.3.31-beta_Play" />
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
@@ -248,7 +254,9 @@
             android:value="27.0.0-SNAPSHOT" />
         <activity
             android:name=".Kotlin"
+            android:icon="@mipmap/io_jar"
             android:label="@string/kotlin"
+            android:launchMode="singleTop"
             android:excludeFromRecents="true"
             android:exported="true">
             <intent-filter>
@@ -268,7 +276,54 @@
         </activity>
         
         <activity
-            android:name=".MainActivity"
+            android:name=".KivActivity"
+            android:icon="@mipmap/io_lai"
+            android:label="@string/listView"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+           <meta-data
+                 android:name="Service"
+                 android:value="true" />
+           <meta-data
+                 android:name="Trusted service"
+                 android:value="true" />
+           <meta-data
+                 android:name="ListView"
+                 android:value="true" />
+        </activity>
+        
+        
+        <activity
+            android:name=".Web"
+            android:icon="@mipmap/io_jty"
+            android:label="@string/EditText"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+           <meta-data
+                 android:name="Service"
+                 android:value="true" />
+           <meta-data
+                 android:name="Trusted service"
+                 android:value="true" />
+           <meta-data
+                 android:name="EditText"
+                 android:value="true" />
+        </activity>
+        
+        <activity
+            android:name=".ListActivity"
             android:excludeFromRecents="true"
             android:exported="true">
             <meta-data
